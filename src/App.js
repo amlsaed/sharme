@@ -7,10 +7,10 @@ import Home from './container/Home';
 const App = () => {
   
 
-  useEffect(() => {
-    const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
-    if (!User){ window.location.href='/login';}
-  }, []);
+  // useEffect(() => {
+  //   const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
+  //   if (!User){ window.location.href='/login';}
+  // }, []);
   return (
     <HashRouter>
     <Routes>
