@@ -9,7 +9,6 @@ import { client } from '../client';
 
 
 const Login = () => {
-  const navigate = useNavigate();
   const responseGoogle=(response)=>{
     var decodedHeader = jwt_decode(response.credential);
     console.log(decodedHeader);
@@ -25,7 +24,7 @@ const Login = () => {
 
     client.createIfNotExists(doc)
       .then(() =>{
-        navigate('/', { replace: true })
+        window.location.href='/';
       })
 
   }

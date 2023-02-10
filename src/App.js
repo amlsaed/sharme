@@ -1,25 +1,21 @@
-import React, { useEffect } from 'react';
-import { HashRouter,BrowserRouter, Routes, Route ,useNavigate} from "react-router-dom";
+import React, { useEffect,useState } from 'react';
+import { HashRouter,BrowserRouter, Routes, Route ,useNavigate,redirect} from "react-router-dom";
 
 import Login from './components/login';
 import Home from './container/Home';
 
-const App = () => {
   
 
-  // useEffect(() => {
-  //   const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
-  //   if (!User){ window.location.href='/login';}
-  // }, []);
+const App = () => {
+  const [User,setUser] = useState(localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear());
   return (
-    <HashRouter>
+    <BrowserRouter>
     <Routes>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/*/login" element={<Login/>}/>
-        <Route path="/*" element={<Home />} />
-    </Routes>
-    </HashRouter>
     
+        <Route path="/*" element={User ?(<Home />):(<Login replace to={"/login"} />)} />
+    </Routes>
+    </BrowserRouter>
   );
 };
 

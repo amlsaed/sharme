@@ -6,9 +6,9 @@ function Spinner({ message }) {
     <div className="flex flex-col justify-center items-center w-full h-full">
       <RotatingLines
         type="Circles"
-        color="#00BFFF"
+        color="#333"
         height={50}
-        width={200}
+        width={100}
         className="m-5"
       />
 
